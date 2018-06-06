@@ -13,6 +13,6 @@ public class Parameters {
 	public static double mutationRate = 0.1;
 	public static int maxIterations = 10000000;
 
-	public static Class optimizer = EA.class;
+	public static Class optimizer = Backtracking.class;
 
 }

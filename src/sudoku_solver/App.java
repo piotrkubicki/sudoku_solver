@@ -8,7 +8,7 @@ import java.util.Observable;
 
 public class App extends Observable implements Runnable {
 
-	private String problemInstanceFilename = "/home/pz/Projects/sudoku_solver/sudoku.sdk";
+	private String problemInstanceFilename = "/home/pz/Projects/sudoku_solver/sudoku_hard.sdk";
 	
 	@Override
 	public void run() {
