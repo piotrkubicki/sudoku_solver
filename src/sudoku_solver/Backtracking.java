@@ -10,12 +10,12 @@ public class Backtracking extends Optimizer {
 	public Sudoku sudoku;
 	
 	@Override
-	public void execute() {
-		sudoku = Parameters.problemInstance.clone();
+	public boolean execute(Sudoku sudoku) {
+		this.sudoku = sudoku;
 		
 		backtrack();
 		
-		sudoku.print();
+		return true;
 	}
 	
 	private boolean backtrack() {

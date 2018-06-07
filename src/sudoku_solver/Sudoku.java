@@ -7,6 +7,13 @@ public class Sudoku {
 	
 	public Sudoku() {
 		gameboard = new Field[Parameters.BOARD_SIZE][Parameters.BOARD_SIZE];
+		
+		for (int i = 0; i < Parameters.BOARD_SIZE; i++) {
+			for (int j = 0; j < Parameters.BOARD_SIZE; j++) {
+				gameboard[i][j] = new Field();
+			}
+		}
+		
 		fitness = 0;
 	}
 	

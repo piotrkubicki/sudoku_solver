@@ -5,6 +5,7 @@ import java.util.List;
 
 public class EA extends Optimizer {
 
+	public Sudoku sudoku;
 	public List<Sudoku> population;
 	public Sudoku best;
 	
@@ -13,10 +14,10 @@ public class EA extends Optimizer {
 	private Operator mutator;
 	private Operator inserter;
 	
-	
 	@Override
-	public void execute() {
+	public boolean execute(Sudoku sudoku) {
 		setOperators();
+		this.sudoku = sudoku;
 		
 		generatePopulation();
 		best = findBest();
@@ -45,13 +46,15 @@ public class EA extends Optimizer {
 		
 		System.out.println("BEST Fitness: " + best.fitness);
 		best.print();
+		
+		return true;
 	}
 	
 	private void generatePopulation() {
 		population = new ArrayList<>();
 		
 		for (int i = 0; i < Parameters.populationSize; i++) {
-			population.add(Sudoku.generate(Parameters.problemInstance));
+			population.add(Sudoku.generate(sudoku));
 		}
 	}
 	
